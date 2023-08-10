@@ -17,7 +17,6 @@ const InputCartao = ({ input,
 
   useEffect(() => {
     let timeOut: NodeJS.Timeout | null = null;
-    console.log("entrou");
     if (inputRef.current !== null && input === '') {
       timeOut = setTimeout(() => {
         inputRef.current?.focus();
