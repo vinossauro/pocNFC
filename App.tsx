@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { View, Text, TextInput, Button, Image } from 'react-native';
+import React, { useEffect, useState, useRef, Fragment } from 'react';
+import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
 import NfcManager, { NfcEvents } from 'react-native-nfc-manager';
-import { StyleSheet } from 'react-native';
 import axios from 'axios';
+import Loader from './components/loader';
+import styles from './components/styles';
+
 
 const App = () => {
   const [number, setNumber] = useState<string | null>('');
@@ -48,7 +50,7 @@ const App = () => {
         // forçando um delay para não deixar passar seguidamente; também é uma simulação para ver como seria bloquear um carregamento
         timeOut = setTimeout(() => {
           setLoading(false);
-        }, 2000);
+        }, 500);
       };
       func();
     }
@@ -85,13 +87,12 @@ const App = () => {
   //   });
   // }, []);
 
+
+
   return (
     <View style={styles.conteiner}>
       {
-        loading &&
-          <View style={{ display: 'flex', justifyContent: 'center', position: 'absolute', width: '100%', height: '100%', zIndex: 1000, backgroundColor: "rgba(0.5,0.5,0.5,0.25)" }}>
-            <Text style={{ alignSelf: 'center', padding: 20, backgroundColor: 'rgba(1,1,1,0.25)' }}>Loading...</Text>
-          </View> 
+        loading ? <Loader /> : null
       }
       <>
         <Text>Cartão Aqui</Text>
@@ -117,20 +118,6 @@ const App = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  conteiner: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-  },
-});
 
 
 export default App;
