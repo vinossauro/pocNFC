@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, Fragment } from 'react';
 import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
 import NfcManager, { NfcEvents } from 'react-native-nfc-manager';
 import axios from 'axios';
-import Loader from './components/loader';
+import Loader from './components/Loader';
 import styles from './components/styles';
 
 
