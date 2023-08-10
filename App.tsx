@@ -23,9 +23,9 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      {<Loader loading={loading} />}
-        <InputCartao input={input} setInput={setInput} handleCheckGif={handleCheckGif}/>
-        <Loading loading={loading} setLoading={setLoading} number={number} />
+      <Loader loading={loading} />
+      <InputCartao input={input} setInput={setInput} handleCheckGif={handleCheckGif}/>
+      <Loading loading={loading} setLoading={setLoading} number={number} />
     </View>
     );
   };
