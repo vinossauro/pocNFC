@@ -1,18 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Button, TextInput, View, Text } from 'react-native';
 import styles from './styles';
+import { useAppContext } from '../services/AppContext';
 
-interface Props {
-  input: string | null;
-  setInput: (input: string | null) => void;
-  handleCheckGif: () => void;
-}
 
-const InputCartao = ({ input,
-  setInput,
-  handleCheckGif,
-}: Props) => {
+const InputCartao = () => {
 
+  const { input, setInput, handleCheckGif} = useAppContext();
   const inputRef = useRef<TextInput>(null);
 
   useEffect(() => {

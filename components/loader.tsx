@@ -1,13 +1,11 @@
 import React from "react";
 import { View, Text } from 'react-native';
-
-interface Props {
-  loading: boolean;
-}
+import { useAppContext } from "../services/AppContext";
 
 
 
-const Loader = ({loading}: Props) => {
+const Loader = () => {
+  const { loading } = useAppContext();
   return (
     <>
     {loading &&
