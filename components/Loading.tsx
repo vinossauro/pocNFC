@@ -2,13 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Text, Image } from 'react-native';
 
-interface LoadingProps {
+interface Props {
     number: string | null;
     loading: boolean;
     setLoading: (loading: boolean) => void;
 }
 
-const Loading = ({ number, loading, setLoading }: LoadingProps) => {
+const Loading = ({ number, loading, setLoading }: Props) => {
 
     const [gif, setGif] = useState<string | null>(null);
     const [response, setResponse] = useState<string | null>('');

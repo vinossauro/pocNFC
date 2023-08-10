@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      {loading && <Loader />}
+      {<Loader loading={loading} />}
         <InputCartao input={input} setInput={setInput} handleCheckGif={handleCheckGif}/>
         <Loading loading={loading} setLoading={setLoading} number={number} />
     </View>

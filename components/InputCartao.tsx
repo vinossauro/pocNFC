@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Button, TextInput, View, Text } from 'react-native';
 import styles from './styles';
 
-interface InputCartaoProps {
+interface Props {
   input: string | null;
   setInput: (input: string | null) => void;
   handleCheckGif: () => void;
@@ -11,7 +11,7 @@ interface InputCartaoProps {
 const InputCartao = ({ input,
   setInput,
   handleCheckGif,
-}: InputCartaoProps) => {
+}: Props) => {
 
   const inputRef = useRef<TextInput>(null);
 
