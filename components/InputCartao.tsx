@@ -21,7 +21,7 @@ const InputCartao = () => {
         clearTimeout(timeOut);
       }
     };
-  }, [input]);
+  }, [input, inputRef.current]);
 
   return (
     <View>
